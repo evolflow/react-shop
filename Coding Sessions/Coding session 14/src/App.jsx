@@ -1,22 +1,31 @@
-// 🔝 ІМПОРТИ (самий верх файлу)
 import { useState } from "react";
-import Counter from "./components/Counter.jsx";
-import Buttons from "./components/Buttons.jsx";
-// 🔽 КОМПОНЕНТ
+import WorkoutForm from "./components/WorkoutForm.jsx";
+import WorkoutList from "./components/WorkoutList.jsx";
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [workouts, setWorkouts] = useState([]);
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Counter App</h1>
+    <div style={styles.container}>
+      <h1 style={styles.title}>Workout Tracker💪 </h1>
 
-      {/* 🔢 показ числа */}
-      <Counter count={count} />
-
-      {/* 🎮 кнопки */}
-      <Buttons count={count} setCount={setCount} />
+      <WorkoutForm workouts={workouts} setWorkouts={setWorkouts} />
+      <WorkoutList workouts={workouts} setWorkouts={setWorkouts} />
     </div>
   );
 }
+
+const styles = {
+  container: {
+    maxWidth: "500px",
+    margin: "50px auto",
+    textAlign: "center",
+    fontFamily: "Arial",
+  },
+  title: {
+    fontSize: "32px",
+    marginBottom: "20px",
+  },
+};
 
 export default App;

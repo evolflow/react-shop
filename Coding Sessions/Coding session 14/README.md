@@ -11,7 +11,7 @@
 - Passed data using props
 - Fixed import paths and file structure issues
 - Debugged real-world errors (paths, filenames, кирилиця bug)
-- Deployed project to GitHub
+- Deployed project to GitHub.
 
 ## Coding Session 15
 

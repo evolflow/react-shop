@@ -5,7 +5,7 @@ function WorkoutForm({ workouts, setWorkouts }) {
 
   const handleAdd = () => {
     if (text.trim() === "") return;
-    setWorkouts([...workouts, text]);
+    setWorkouts([...workouts, { text: "Gym", done: false }]);
     setText("");
   };
 

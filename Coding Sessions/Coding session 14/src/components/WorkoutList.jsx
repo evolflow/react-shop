@@ -4,11 +4,31 @@ function WorkoutList({ workouts, setWorkouts }) {
     setWorkouts(newList);
   };
 
+  const handleToggle = (index) => {
+    const newList = workouts.map((item, i) => {
+      if (i === index) {
+        return { ...item, done: !item.done };
+      }
+      return item;
+    });
+
+    setWorkouts(newList);
+  };
+
   return (
     <div>
       {workouts.map((workout, index) => (
         <div key={index} style={styles.item}>
-          <span>{workout}</span>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <input
+              type="checkbox"
+              checked={workout.done}
+              onChange={() => handleToggle(index)}
+            />
+
+            <span>{workout.text}</span>
+          </div>
+
           <button onClick={() => handleDelete(index)}>❌</button>
         </div>
       ))}

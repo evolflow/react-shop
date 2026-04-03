@@ -1,9 +1,16 @@
-import { useState } from "react";
 import WorkoutForm from "./components/WorkoutForm.jsx";
 import WorkoutList from "./components/WorkoutList.jsx";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [workouts, setWorkouts] = useState([]);
+  const [workouts, setWorkouts] = useState(() => {
+    const saved = localStorage.getItem("workouts");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("workouts", JSON.stringify(workouts));
+  }, [workouts]);
 
   return (
     <div style={styles.container}>

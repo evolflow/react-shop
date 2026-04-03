@@ -26,3 +26,14 @@
 - Handled empty input validation
 - Learned separation of concerns (logic split across components)
 - Fixed real-world errors (JSX closing, structure, syntax)
+
+## Coding Session 16
+
+- Continued Workout Tracker project
+- Implemented localStorage (data persists after reload)
+- Refactored workouts into objects (text + done)
+- Added checkbox functionality (toggle completed state)
+- Learned how to update specific item in array using map()
+- Improved state logic and data structure
+- Fixed bugs with rendering and JSX structure
+- Practiced real React workflow (state + events + UI logic)
